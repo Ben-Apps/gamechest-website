@@ -54,7 +54,7 @@ summary{cursor:pointer;font-weight:700;color:var(--off)}
 
 <section class="lang-block" id="en" lang="en">
 <h1>Privacy Policy</h1>
-<p class="meta">GameChest for iPhone, Android and the web · Last updated September 29, 2026</p>
+<p class="meta">GameChest for iPhone, Android and the web · Last updated September 30, 2026</p>
 
 <h2>1. Who is responsible</h2>
 <p>Controller within the meaning of the EU General Data Protection Regulation (GDPR): Benneth Müller, Benneth Müller Digital Solutions &amp; Education, Borgfelder Str. 16, 20537 Hamburg, Germany, <a href="mailto:ben@gamechest.games">ben@gamechest.games</a>.
@@ -62,7 +62,7 @@ Contact for all privacy questions: <a href="mailto:ben@gamechest.games">ben@game
 
 <h2>2. Short version</h2>
 <ul>
-<li>GameChest keeps a private list of video games you discover. Your collection is visible only to you.</li>
+<li>GameChest keeps a private list of video games you discover. Your collection is visible only to you, unless you share it by link (3.14).</li>
 <li>No advertising, no tracking across apps or websites, no sale of your data, no analytics SDK of our own.</li>
 <li>You can delete your account and your collection in the app at any time (Profile → Settings → Account &amp; legal → Delete account).</li>
 </ul>
@@ -138,8 +138,8 @@ Legal basis: § 25(2) no. 2 TDDDG (strictly necessary) and Art. 6(1)(b) GDPR.</p
 <p>When the app connects to our servers, technical connection data (such as IP address, time and requested
 address) is processed by our hosting provider to operate and secure the service. Legal basis: Art. 6(1)(f) GDPR
 (security and stability). Retention follows the hosting provider's log retention:
-up to 7 days, after which the logs are deleted automatically. The website gamechest.games is hosted on GitHub Pages
-(GitHub, Inc., USA); when you open it, GitHub receives your IP address and processes it in its server logs to deliver
+up to 7 days, after which the logs are deleted automatically. The website gamechest.games is hosted on Netlify
+(Netlify, Inc., USA); when you open it, Netlify receives your IP address and processes it in its server logs to deliver
 and secure the site (Art. 6(1)(f) GDPR).</p>
 
 <h3>3.9 Emails</h3>
@@ -172,8 +172,8 @@ consent again the next time you open him. Withdrawing does not affect the lawful
 withdrawal. In the demo, Till answers on your device without AI.</p>
 
 <h3>3.11 Web app (gamechest.games/app)</h3>
-<p>GameChest can also be used in the browser at gamechest.games/app. The web app is hosted on <strong>GitHub
-Pages</strong> (GitHub, Inc., a Microsoft company, USA). When you open it, GitHub receives your IP address and processes
+<p>GameChest can also be used in the browser at gamechest.games/app. The web app is hosted on <strong>Netlify</strong>
+(Netlify, Inc., USA). When you open it, Netlify receives your IP address and processes
 it together with the time and the requested address in its server logs to deliver and secure the site; legal basis:
 Art. 6(1)(f) GDPR. The web app uses the same services as the app (Supabase for your account and collection, the game
 catalogs for search and covers, Anthropic Claude for Till after your consent), as described above. It offers no purchases,
@@ -212,17 +212,35 @@ a sign-in, no details are requested. A trailer opens outside GameChest on YouTub
 browser) only when you tap it; from then on Google's terms and privacy policy apply
 (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>). Legal basis: Art. 6(1)(b) GDPR.</p>
 
+<h3>3.14 Sharing your chest by link</h3>
+<p>When you tap <strong>Share</strong> and choose a link, the app sends our server function a copy of the chest you
+share: the chest's name and, per game, its title, platform, status, your star rating, the cover image address and the
+catalog number. <strong>Notes, your email address and your user ID are not part of this copy.</strong> We store the
+copy together with your user ID (so only you can withdraw it) and create a short link such as
+gamechest.games/c/K7Q2XM9P.</p>
+<p><strong>Anyone who has the link can see the shared chest</strong>, without the app and without an account; the page
+is not listed in search engines. The link works for 30 days. You can withdraw it earlier at any time in the app; the stored
+copy is then deleted immediately and the link shows nothing. A link is also withdrawn when you delete your account. The stored copy is deleted at the
+latest 30 days after the link expired, and immediately when you withdraw it or delete your account. The copy does
+not change when you change your collection later; share again for a new one.</p>
+<p>When someone opens the link, the page (Netlify, 3.11) loads the chest from our server function at Supabase;
+the function uses the visitor's IP address only in working memory, for at most 10 minutes, to limit the number of
+requests, and does not store it; like every request to our servers, it appears in the hosting provider's technical logs (3.8). Cover images are loaded directly from the image servers of the game catalogs
+(IGDB, Steam), which receive the visitor's IP address (as in 3.5). Our own function logs record only the type of
+request, its duration and its status, never the link, the chest or who opened it. Legal basis: Art. 6(1)(b) GDPR (you ask us
+to share your chest).</p>
+
 <h2>4. Service providers and recipients</h2>
 <div class="scroll"><table>
 <tr><th>Recipient</th><th>Role</th><th>Data</th></tr>
-<tr><td>Supabase, Inc. (servers in the EU, AWS region eu-west-1, Ireland)</td><td>Processor: hosting, database, sign-in, server functions, account emails</td><td>Account, collection, profile, server logs</td></tr>
+<tr><td>Supabase, Inc. (servers in the EU, AWS region eu-west-1, Ireland)</td><td>Processor: hosting, database, sign-in, server functions, account emails</td><td>Account, collection, profile, shared chest copies (3.14), server logs</td></tr>
 <tr><td>Hostinger International Ltd. (Cyprus, EU)</td><td>Processor: delivery of account emails via SMTP (3.9)</td><td>Email address, email content</td></tr>
 <tr><td>RevenueCat, Inc. (USA)</td><td>Processor: subscription management</td><td>User ID, purchase and subscription data</td></tr>
 <tr><td>Anthropic Ireland, Limited (Ireland) / Anthropic, PBC (USA), Claude API</td><td>Processor: AI answers for Till (3.10) and photo recognition (3.12), each only after your consent</td><td>Chat messages, chest titles/platforms/statuses, profile platforms and genres; for the photo AI a reduced photo without EXIF data and the text read from it</td></tr>
 <tr><td>Apple (Apple Inc. / Apple Distribution International Ltd.)</td><td>App Store payments under Apple's own privacy policy</td><td>Purchase data</td></tr>
 <tr><td>Google (Google LLC / Google Ireland Ltd.)</td><td>ML Kit metrics (3.4); Google Play payments on Android</td><td>Technical metrics; purchase data on Android</td></tr>
-<tr><td>GitHub, Inc. (Microsoft, USA), GitHub Pages</td><td>Hosting of the website and the web app (3.8, 3.11)</td><td>IP address, server logs</td></tr>
-<tr><td>Public game catalogs, link and barcode sources</td><td>Receive your search input without your identity (3.3) and, for game details, only the game's catalog number (3.13); image servers receive your IP address (3.5, 3.13)</td><td>Search input; catalog number; IP address</td></tr>
+<tr><td>Netlify, Inc. (USA)</td><td>Hosting of the website and the web app (3.8, 3.11)</td><td>IP address, server logs</td></tr>
+<tr><td>Public game catalogs, link and barcode sources</td><td>Receive your search input without your identity (3.3) and, for game details, only the game's catalog number (3.13); image servers receive your IP address or that of a visitor to a shared chest (3.5, 3.13, 3.14)</td><td>Search input; catalog number; IP address</td></tr>
 </table></div>
 <p>Where data is transferred to countries outside the EU/EEA (in particular the USA), this takes place on the
 basis of the EU-US Data Privacy Framework where the recipient is certified under it, and otherwise the EU Standard Contractual Clauses (Art. 46(2)(c) GDPR).
@@ -248,6 +266,8 @@ results stay in the server function's working memory for at most 5 minutes and a
 chat data within 30 days (3.10).</li>
 <li><strong>Photo AI:</strong> the photo and its text are not stored; the daily photo counter is deleted by a
 daily job once it is older than 31 days, and immediately when you delete your account (3.12).</li>
+<li><strong>Shared chest links:</strong> 30 days, or until you withdraw them or delete your account; the stored copy
+is deleted at the latest 30 days after expiry, and immediately when you withdraw it or delete your account (3.14).</li>
 <li><strong>Data on your device:</strong> until you sign out, delete the demo data or delete the app.</li>
 </ul>
 
@@ -270,7 +290,7 @@ applicable child-protection law; Anthropic's child-safety requirements for produ
 
 <section class="lang-block" id="de" lang="de">
 <h1>Datenschutzerklärung</h1>
-<p class="meta">GameChest für iPhone, Android und das Web · Stand 29. September 2026</p>
+<p class="meta">GameChest für iPhone, Android und das Web · Stand 30. September 2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO): Benneth Müller, Benneth Müller Digital Solutions &amp; Education, Borgfelder Str. 16, 20537 Hamburg, Deutschland, <a href="mailto:ben@gamechest.games">ben@gamechest.games</a>.
@@ -278,7 +298,7 @@ Kontakt für alle Datenschutzfragen: <a href="mailto:ben@gamechest.games">ben@ga
 
 <h2>2. Kurzfassung</h2>
 <ul>
-<li>GameChest führt eine private Liste der Videospiele, die du entdeckst. Deine Sammlung sieht nur du.</li>
+<li>GameChest führt eine private Liste der Videospiele, die du entdeckst. Deine Sammlung sieht nur du, außer du teilst sie per Link (3.14).</li>
 <li>Keine Werbung, kein Tracking über Apps oder Websites hinweg, kein Verkauf deiner Daten, kein eigenes Analyse-SDK.</li>
 <li>Du kannst dein Konto und deine Sammlung jederzeit in der App löschen (Profil → Einstellungen → Konto &amp; Recht → Konto löschen).</li>
 </ul>
@@ -356,8 +376,8 @@ anzubieten. Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG (unbedingt erforderlich) u
 <p>Verbindet sich die App mit unseren Servern, verarbeitet unser Hosting-Anbieter technische Verbindungsdaten (etwa
 IP-Adresse, Zeitpunkt, aufgerufene Adresse), um den Dienst zu betreiben und abzusichern. Rechtsgrundlage: Art. 6
 Abs. 1 lit. f DSGVO (Sicherheit und Stabilität). Speicherdauer gemäß Log-Aufbewahrung des Anbieters:
-bis zu 7 Tage; danach werden die Protokolle automatisch gelöscht. Die Website gamechest.games wird über GitHub Pages
-(GitHub, Inc., USA) bereitgestellt; beim Aufruf erhält GitHub deine IP-Adresse und verarbeitet sie in seinen
+bis zu 7 Tage; danach werden die Protokolle automatisch gelöscht. Die Website gamechest.games wird über Netlify
+(Netlify, Inc., USA) bereitgestellt; beim Aufruf erhält Netlify deine IP-Adresse und verarbeitet sie in seinen
 Server-Logs, um die Seite auszuliefern und abzusichern (Art. 6 Abs. 1 lit. f DSGVO).</p>
 
 <h3>3.9 E-Mails</h3>
@@ -393,8 +413,8 @@ fragt beim nächsten Öffnen erneut. Die Rechtmäßigkeit der Verarbeitung bis z
 antwortet Till ohne KI auf deinem Gerät.</p>
 
 <h3>3.11 Web-App (gamechest.games/app)</h3>
-<p>GameChest lässt sich auch im Browser unter gamechest.games/app nutzen. Die Web-App wird über <strong>GitHub
-Pages</strong> (GitHub, Inc., ein Unternehmen von Microsoft, USA) bereitgestellt. Beim Aufruf erhält GitHub deine
+<p>GameChest lässt sich auch im Browser unter gamechest.games/app nutzen. Die Web-App wird über <strong>Netlify</strong>
+(Netlify, Inc., USA) bereitgestellt. Beim Aufruf erhält Netlify deine
 IP-Adresse und verarbeitet sie zusammen mit Zeitpunkt und aufgerufener Adresse in seinen Server-Logs, um die Seite
 auszuliefern und abzusichern; Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Die Web-App nutzt dieselben Dienste wie die
 App (Supabase für Konto und Sammlung, die Spielekataloge für Suche und Cover, Anthropic Claude für Till nach deiner
@@ -438,17 +458,35 @@ außerhalb der App bei YouTube (in der YouTube-App oder deinem Browser); ab dann
 Datenschutzerklärung (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).
 Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
 
+<h3>3.14 Truhe per Link teilen</h3>
+<p>Tippst du auf <strong>Teilen</strong> und wählst einen Link, sendet die App unserer Serverfunktion eine Kopie der
+geteilten Truhe: den Namen der Truhe und je Spiel Titel, Plattform, Status, deine Sternebewertung, die Adresse des
+Cover-Bilds und die Katalognummer. <strong>Notizen, deine E-Mail-Adresse und deine Benutzer-ID gehören nicht zu
+dieser Kopie.</strong> Wir speichern die Kopie zusammen mit deiner Benutzer-ID (damit nur du sie widerrufen kannst)
+und erzeugen einen kurzen Link wie gamechest.games/c/K7Q2XM9P.</p>
+<p><strong>Wer den Link hat, sieht die geteilte Truhe</strong> – ohne App und ohne Konto; Suchmaschinen führen die
+Seite nicht. Der Link gilt 30 Tage. Du kannst ihn vorher jederzeit in der App widerrufen; die gespeicherte Kopie wird dann sofort gelöscht und der Link zeigt nichts mehr.
+Löschst du dein Konto, ist der Link ebenfalls widerrufen. Die gespeicherte Kopie wird spätestens 30 Tage nach Ablauf
+gelöscht, bei Widerruf oder beim Löschen deines Kontos sofort. Die Kopie ändert sich nicht, wenn du deine Sammlung
+später änderst; für einen neuen Stand teilst du erneut.</p>
+<p>Öffnet jemand den Link, lädt die Seite (Netlify, 3.11) die Truhe von unserer Serverfunktion bei Supabase;
+die Funktion nutzt die IP-Adresse des Besuchers nur im Arbeitsspeicher und höchstens 10 Minuten, um die Zahl der
+Anfragen zu begrenzen, und speichert sie nicht; wie jede Anfrage an unsere Server erscheint sie in den technischen Logs des Hosters (3.8). Cover-Bilder lädt der Browser direkt von den
+Bildservern der Spielekataloge (IGDB, Steam), die dabei die IP-Adresse des Besuchers erhalten (wie in 3.5). Unsere
+eigenen Funktions-Logs halten nur Art, Dauer und Status der Anfrage fest, nie den Link, die Truhe oder wer ihn geöffnet hat.
+Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (du bittest uns, deine Truhe zu teilen).</p>
+
 <h2>4. Dienstleister und Empfänger</h2>
 <div class="scroll"><table>
 <tr><th>Empfänger</th><th>Rolle</th><th>Daten</th></tr>
-<tr><td>Supabase, Inc. (Server in der EU, AWS-Region eu-west-1, Irland)</td><td>Auftragsverarbeiter: Hosting, Datenbank, Anmeldung, Serverfunktionen, Konto-E-Mails</td><td>Konto, Sammlung, Profil, Server-Logs</td></tr>
+<tr><td>Supabase, Inc. (Server in der EU, AWS-Region eu-west-1, Irland)</td><td>Auftragsverarbeiter: Hosting, Datenbank, Anmeldung, Serverfunktionen, Konto-E-Mails</td><td>Konto, Sammlung, Profil, geteilte Truhen-Kopien (3.14), Server-Logs</td></tr>
 <tr><td>Hostinger International Ltd. (Zypern, EU)</td><td>Auftragsverarbeiter: Zustellung der Konto-E-Mails per SMTP (3.9)</td><td>E-Mail-Adresse, Inhalt der E-Mail</td></tr>
 <tr><td>RevenueCat, Inc. (USA)</td><td>Auftragsverarbeiter: Abo-Verwaltung</td><td>Benutzer-ID, Kauf- und Abodaten</td></tr>
 <tr><td>Anthropic Ireland, Limited (Irland) / Anthropic, PBC (USA), Claude API</td><td>Auftragsverarbeiter: KI-Antworten für Till (3.10) und Foto-Erkennung (3.12), jeweils nur nach deiner Einwilligung</td><td>Chat-Nachrichten, Titel/Plattform/Status der Truhenspiele, Profil-Plattformen und -Genres; für die Foto-KI ein verkleinertes Foto ohne EXIF-Daten und der darauf gelesene Text</td></tr>
 <tr><td>Apple (Apple Inc. / Apple Distribution International Ltd.)</td><td>App-Store-Zahlung nach Apples eigener Datenschutzrichtlinie</td><td>Kaufdaten</td></tr>
 <tr><td>Google (Google LLC / Google Ireland Ltd.)</td><td>ML-Kit-Messwerte (3.4); Google-Play-Zahlungen unter Android</td><td>Technische Messwerte; Kaufdaten unter Android</td></tr>
-<tr><td>GitHub, Inc. (Microsoft, USA), GitHub Pages</td><td>Hosting der Website und der Web-App (3.8, 3.11)</td><td>IP-Adresse, Server-Logs</td></tr>
-<tr><td>Öffentliche Spielekataloge, Link- und Barcode-Quellen</td><td>erhalten deine Sucheingabe ohne deine Identität (3.3) und für Spieldetails nur die Katalognummer des Spiels (3.13); Bildserver erhalten deine IP-Adresse (3.5, 3.13)</td><td>Sucheingabe; Katalognummer; IP-Adresse</td></tr>
+<tr><td>Netlify, Inc. (USA)</td><td>Hosting der Website und der Web-App (3.8, 3.11)</td><td>IP-Adresse, Server-Logs</td></tr>
+<tr><td>Öffentliche Spielekataloge, Link- und Barcode-Quellen</td><td>erhalten deine Sucheingabe ohne deine Identität (3.3) und für Spieldetails nur die Katalognummer des Spiels (3.13); Bildserver erhalten deine IP-Adresse bzw. die der Besucher einer geteilten Truhe (3.5, 3.13, 3.14)</td><td>Sucheingabe; Katalognummer; IP-Adresse</td></tr>
 </table></div>
 <p>Soweit Daten in Länder außerhalb der EU/des EWR (insbesondere die USA) übermittelt werden, geschieht das auf
 Grundlage des EU-US Data Privacy Framework, soweit der Empfänger danach zertifiziert ist, und im Übrigen der EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).
@@ -475,6 +513,8 @@ Katalogtreffer bleiben höchstens 5 Minuten im Arbeitsspeicher der Serverfunktio
 löscht Chatdaten binnen 30 Tagen (3.10).</li>
 <li><strong>Foto-KI:</strong> Foto und Text werden nicht gespeichert; den täglichen Fotozähler löscht ein täglicher
 Job, sobald er älter als 31 Tage ist, und sofort, wenn du dein Konto löschst (3.12).</li>
+<li><strong>Geteilte Truhen-Links:</strong> 30 Tage bzw. bis du sie widerrufst oder dein Konto löschst; die gespeicherte
+Kopie wird spätestens 30 Tage nach Ablauf gelöscht, bei Widerruf oder Kontolöschung sofort (3.14).</li>
 <li><strong>Daten auf deinem Gerät:</strong> bis du dich abmeldest, die Demo-Daten löschst oder die App löschst.</li>
 </ul>
 
