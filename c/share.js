@@ -14,7 +14,7 @@
   if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) ENDPOINT = location.origin + '/functions/v1/chest-share';
   // Öffentlicher Publishable Key (steht ohnehin in jeder App).
   var SUPABASE_KEY = 'sb_publishable_t3CFnbENuZWLUDm-YqHXaA_7AJt0M8t';
-  var KEY = /^[2-9A-HJ-NP-Z]{6}$/;
+  var KEY = /^(?:[2-9A-HJ-NP-Z]{6}|[2-9A-HJ-NP-Z]{8})$/; // neu 8, ältere Links 6
   var STATUS_LABEL = { want: 'Want to play', playing: 'Playing', completed: 'Completed', dropped: 'Dropped' };
 
   var root = document.querySelector('[data-chest-root]');
