@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "id": "videothek",
+  "name": "Video Store",
+  "sceneKind": "store",
+  "projection": "topdown",
+  "scene": {
+    "width": 1536,
+    "height": 2304
+  },
+  "backgroundAsset": "assets/images/videothek/room.png",
+  "backgroundFallbackAsset": "assets/images/store/room.png",
+  "camera": {
+    "portraitWindow": [
+      768,
+      1600
+    ],
+    "landscapeWindow": [
+      1536,
+      1024
+    ]
+  },
+  "walkSpeed": 320,
+  "palette": {
+    "background": "#101529",
+    "accent": "#FFD76A"
+  },
+  "uiIcons": {
+    "library": "assets/images/ui/icon_library.png",
+    "profile": "assets/images/ui/icon_profile.png",
+    "add": "assets/images/ui/icon_add.png",
+    "decorate": "assets/images/ui/icon_decorate.png",
+    "interact": "assets/images/ui/icon_interact.png",
+    "close": "assets/images/ui/icon_close.png"
+  },
+  "mascot": {
+    "asset": "assets/images/mascot.png",
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "columns": 2,
+    "frameCount": 4,
+    "stepTime": 0.24,
+    "renderSize": 180,
+    "spawn": [
+      768,
+      1200
+    ],
+    "portraitAsset": "assets/images/mascot_idle.png"
+  },
+  "props": {
+    "exit": {
+      "asset": "assets/images/store/door.png",
+      "position": [
+        768,
+        640
+      ],
+      "size": 240,
+      "interactionOffset": [
+        0,
+        100
+      ],
+      "action": "exit",
+      "anchorY": 0.951171875,
+      "baseWidth": 0.84,
+      "baseDepth": 0.19,
+      "labelTop": 0.052734375
+    },
+    "neon": {
+      "asset": "assets/images/videothek/neon_sign.png",
+      "position": [
+        768,
+        330
+      ],
+      "size": 300,
+      "anchorY": 0.73828125,
+      "fallbackAsset": "assets/images/topdown/neon_sign.png",
+      "kind": "wall"
+    },
+    "poster_a": {
+      "asset": "assets/images/videothek/poster_a.png",
+      "position": [
+        300,
+        330
+      ],
+      "size": 220,
+      "anchorY": 1,
+      "kind": "wall"
+    },
+    "poster_b": {
+      "asset": "assets/images/videothek/poster_b.png",
+      "position": [
+        1030,
+        330
+      ],
+      "size": 220,
+      "anchorY": 1,
+      "kind": "wall"
+    },
+    "poster_c": {
+      "asset": "assets/images/videothek/poster_c.png",
+      "position": [
+        1270,
+        330
+      ],
+      "size": 220,
+      "anchorY": 1,
+      "kind": "wall"
+    },
+    "return_box": {
+      "asset": "assets/images/videothek/return_box.png",
+      "position": [
+        1360,
+        830
+      ],
+      "size": 140,
+      "fallbackAsset": "assets/images/store/kiosk.png",
+      "action": "inbox",
+      "interactionOffset": [
+        0,
+        70
+      ],
+      "anchorY": 0.95,
+      "baseWidth": 0.7,
+      "baseDepth": 0.3,
+      "badgeAnchor": [
+        400,
+        90
+      ]
+    },
+    "library": {
+      "asset": "assets/images/videothek/shelf_a.png",
+      "position": [
+        470,
+        1050
+      ],
+      "size": 430,
+      "fallbackAsset": "assets/images/store/shelf.png",
+      "action": "shelf:action",
+      "anchorY": 0.951171875,
+      "baseWidth": 0.84,
+      "baseDepth": 0.15,
+      "labelTop": 0.31640625
+    },
+    "shelf_popular": {
+      "asset": "assets/images/videothek/shelf_b.png",
+      "position": [
+        1066,
+        1050
+      ],
+      "size": 430,
+      "fallbackAsset": "assets/images/store/shelf.png",
+      "action": "shelf:adventure",
+      "anchorY": 0.951171875,
+      "baseWidth": 0.84,
+      "baseDepth": 0.15,
+      "labelTop": 0.31640625
+    },
+    "shelf_for_you": {
+      "asset": "assets/images/videothek/shelf_b.png",
+      "position": [
+        470,
+        1500
+      ],
+      "size": 430,
+      "fallbackAsset": "assets/images/store/shelf.png",
+      "action": "shelf:rpg",
+      "anchorY": 0.951171875,
+      "baseWidth": 0.84,
+      "baseDepth": 0.15,
+      "labelTop": 0.31640625
+    },
+    "shelf_short": {
+      "asset": "assets/images/videothek/shelf_a.png",
+      "position": [
+        1066,
+        1950
+      ],
+      "size": 430,
+      "fallbackAsset": "assets/images/store/shelf.png",
+      "action": "shelf:strategy",
+      "anchorY": 0.951171875,
+      "baseWidth": 0.84,
+      "baseDepth": 0.15,
+      "labelTop": 0.31640625
+    },
+    "spinner": {
+      "asset": "assets/images/videothek/spinner.png",
+      "position": [
+        768,
+        1360
+      ],
+      "size": 160,
+      "fallbackAsset": "assets/images/store/kiosk.png",
+      "action": "surprise",
+      "interactionOffset": [
+        0,
+        80
+      ],
+      "anchorY": 0.95,
+      "baseWidth": 0.45,
+      "baseDepth": 0.3
+    },
+    "counter": {
+      "asset": "assets/images/videothek/counter.png",
+      "position": [
+        970,
+        1500
+      ],
+      "size": 340,
+      "fallbackAsset": "assets/images/store/counter.png",
+      "action": "talk",
+      "interactionOffset": [
+        0,
+        70
+      ],
+      "anchorY": 0.951171875,
+      "baseWidth": 0.84,
+      "baseDepth": 0.19,
+      "labelTop": 0.55859375
+    },
+    "till": {
+      "asset": "assets/images/videothek/till_idle.png",
+      "position": [
+        970,
+        1420
+      ],
+      "size": 170,
+      "kind": "npc",
+      "action": "talk",
+      "anchorY": 0.95,
+      "labelTop": 0.1
+    },
+    "bargain_bin": {
+      "asset": "assets/images/videothek/bargain_bin.png",
+      "fallbackAsset": "assets/images/store/kiosk.png",
+      "position": [
+        1360,
+        1750
+      ],
+      "size": 150,
+      "action": "bin",
+      "interactionOffset": [
+        0,
+        60
+      ],
+      "anchorY": 0.95,
+      "baseWidth": 0.7,
+      "baseDepth": 0.3
+    },
+    "shelf_retro": {
+      "asset": "assets/images/videothek/shelf_retro.png",
+      "fallbackAsset": "assets/images/videothek/shelf_b.png",
+      "position": [
+        470,
+        1950
+      ],
+      "size": 400,
+      "action": "shelf:simulation",
+      "anchorY": 0.951171875,
+      "baseWidth": 0.84,
+      "baseDepth": 0.15,
+      "labelTop": 0.31640625
+    },
+    "demo_station": {
+      "asset": "assets/images/videothek/demo_station.png",
+      "fallbackAsset": "assets/images/videothek/spinner.png",
+      "position": [
+        180,
+        830
+      ],
+      "size": 150,
+      "action": "demo",
+      "interactionOffset": [
+        0,
+        50
+      ],
+      "anchorY": 0.95,
+      "baseWidth": 0.5,
+      "baseDepth": 0.22
+    },
+    "card_file": {
+      "asset": "assets/images/videothek/card_file.png",
+      "fallbackAsset": "assets/images/store/kiosk.png",
+      "position": [
+        1360,
+        1300
+      ],
+      "size": 140,
+      "action": "profile",
+      "interactionOffset": [
+        0,
+        60
+      ],
+      "anchorY": 0.95,
+      "baseWidth": 0.6,
+      "baseDepth": 0.3
+    },
+    "staff_pick": {
+      "asset": "assets/images/videothek/staff_pick.png",
+      "position": [
+        768,
+        1150
+      ],
+      "size": 96,
+      "kind": "sign",
+      "anchorY": 1,
+      "action": "note:staffPick"
+    },
+    "hours_sign": {
+      "asset": "assets/images/videothek/hours_sign.png",
+      "position": [
+        1030,
+        620
+      ],
+      "size": 110,
+      "kind": "sign",
+      "anchorY": 1,
+      "action": "note:hours"
+    },
+    "returns_sign": {
+      "asset": "assets/images/videothek/returns_sign.png",
+      "position": [
+        1290,
+        620
+      ],
+      "size": 110,
+      "kind": "sign",
+      "anchorY": 1,
+      "action": "note:returns"
+    },
+    "wall_tv": {
+      "asset": "assets/images/videothek/wall_tv.png",
+      "position": [
+        300,
+        620
+      ],
+      "size": 200,
+      "kind": "wall",
+      "anchorY": 1
+    },
+    "snack_rack": {
+      "asset": "assets/images/videothek/snack_rack.png",
+      "position": [
+        180,
+        1300
+      ],
+      "size": 120,
+      "anchorY": 0.95,
+      "baseWidth": 0.6,
+      "baseDepth": 0.3
+    },
+    "rewinder": {
+      "asset": "assets/images/videothek/rewinder.png",
+      "position": [
+        180,
+        1750
+      ],
+      "size": 120,
+      "anchorY": 0.95,
+      "baseWidth": 0.6,
+      "baseDepth": 0.3
+    }
+  },
+  "floor": [
+    [
+      100,
+      660
+    ],
+    [
+      1436,
+      660
+    ],
+    [
+      1436,
+      2200
+    ],
+    [
+      100,
+      2200
+    ]
+  ],
+  "placementSlots": [
+    [
+      180,
+      1000
+    ],
+    [
+      180,
+      1550
+    ],
+    [
+      1360,
+      1000
+    ],
+    [
+      1360,
+      1550
+    ],
+    [
+      768,
+      900
+    ]
+  ],
+  "occlusionPolicy": "Solid furniture bases; actors and props sorted by bottom-center y. The four shelves sit close enough that the entrance view already shows stock; the central aisle stays open past the spinner rack."
+}

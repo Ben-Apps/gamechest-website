@@ -1,0 +1,15 @@
+Schriften auf gamechest.games / Fonts used on gamechest.games
+=========================================================
+
+Nunito
+  Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito)
+  Lizenz / License: SIL Open Font License, Version 1.1
+  Volltext / Full text: /licenses/OFL-Nunito.txt
+
+Silkscreen
+  Copyright 2001 The Silkscreen Project Authors (https://github.com/googlefonts/silkscreen)
+  Lizenz / License: SIL Open Font License, Version 1.1
+  Volltext / Full text: /licenses/OFL-Silkscreen.txt
+
+Beide Schriften werden von gamechest.games selbst ausgeliefert (keine Anfrage an Dritte).
+Both fonts are served by gamechest.games itself (no third-party requests).

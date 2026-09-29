@@ -1,0 +1,8 @@
+# Netlify-Konfiguration für das Export-Repo Ben-Apps/gamechest-website.
+# Das Repo enthält NUR den fertigen statischen Export (sites/gamechest/out aus app-websites) – Netlify baut nichts.
+# Header und Weiterleitungen stehen in _headers und _redirects (Netlify liest beide nativ).
+# Quelle: app-websites/sites/gamechest/netlify/netlify.toml – hier nicht von Hand ändern, sondern dort + neu deployen.
+
+[build]
+  publish = "."
+  command = ""

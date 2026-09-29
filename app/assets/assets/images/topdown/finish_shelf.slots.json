@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "coordinateSpace": "finish_shelf.png native512x512 sprite pixels",
+  "shelfAsset": "assets/images/topdown/finish_shelf.png",
+  "shelfDimensions": [
+    512,
+    512
+  ],
+  "shelfBounds": [
+    56,
+    402,
+    456,
+    512
+  ],
+  "boardTopY": 402,
+  "shelfSurfaceY": 414,
+  "surfaceSpanX": [
+    69,
+    443
+  ],
+  "edgeMargin": 8,
+  "slotCentersX": [
+    90,
+    156,
+    223,
+    289,
+    356,
+    422
+  ],
+  "slots": [
+    {
+      "x": 90,
+      "y": 414,
+      "anchor": "bottom-center"
+    },
+    {
+      "x": 156,
+      "y": 414,
+      "anchor": "bottom-center"
+    },
+    {
+      "x": 223,
+      "y": 414,
+      "anchor": "bottom-center"
+    },
+    {
+      "x": 289,
+      "y": 414,
+      "anchor": "bottom-center"
+    },
+    {
+      "x": 356,
+      "y": 414,
+      "anchor": "bottom-center"
+    },
+    {
+      "x": 422,
+      "y": 414,
+      "anchor": "bottom-center"
+    }
+  ],
+  "trophyAsset": "assets/images/topdown/trophy_small.png",
+  "trophySourceRect": {
+    "x": 34,
+    "y": 52,
+    "width": 60,
+    "height": 76
+  },
+  "trophyTargetSize": [
+    26,
+    30
+  ],
+  "shelfAnchorY": 1,
+  "previewSizes": [
+    190,
+    48
+  ],
+  "measurementNote": "Back board edge y402; trophy feet rest12px forward on the visible shallow top face. 8px clear wood margin beyond each outer trophy silhouette. Use the measured trophySourceRect to avoid scaling its alpha gutters into the26x30 motif target."
+}

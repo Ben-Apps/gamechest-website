@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "defaultSkinId": "topdown",
+  "skins": [
+    {
+      "id": "cozy",
+      "manifest": "assets/skins/cozy.json",
+      "requiredEntitlement": null
+    },
+    {
+      "id": "topdown",
+      "manifest": "assets/skins/topdown.json",
+      "requiredEntitlement": null
+    }
+  ]
+}

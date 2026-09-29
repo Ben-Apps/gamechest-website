@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "id": "topdown",
+  "name": "Top-down room",
+  "projection": "topdown",
+  "scene": {
+    "width": 1536,
+    "height": 2304
+  },
+  "backgroundAsset": "assets/images/topdown/room.png",
+  "nightSkyAsset": "assets/images/topdown/night_stars.png",
+  "nightCityAsset": "assets/images/topdown/night_city.png",
+  "windowWalkers": [
+    "assets/images/topdown/walker_cat.png",
+    "assets/images/topdown/walker_knight.png",
+    "assets/images/topdown/walker_mage.png",
+    "assets/images/topdown/walker_slime.png"
+  ],
+  "camera": {
+    "portraitWindow": [768, 1365],
+    "landscapeWindow": [1536, 1024]
+  },
+  "walkSpeed": 320,
+  "windowPanes": [
+    [157, 156, 234, 231],
+    [239, 157, 314, 231],
+    [455, 157, 529, 231],
+    [535, 156, 612, 231],
+    [929, 156, 1004, 231],
+    [1008, 156, 1082, 231],
+    [1223, 156, 1298, 231],
+    [1304, 157, 1377, 231],
+    [159, 236, 233, 311],
+    [239, 236, 314, 312],
+    [455, 236, 529, 312],
+    [535, 236, 610, 311],
+    [929, 237, 1002, 311],
+    [1010, 236, 1082, 311],
+    [1223, 236, 1296, 312],
+    [1304, 236, 1377, 311]
+  ],
+  "noPlacementZones": [
+    [650, 424, 886, 584]
+  ],
+  "palette": {
+    "background": "#101529",
+    "accent": "#FFD76A"
+  },
+  "uiIcons": {
+    "library": "assets/images/ui/icon_library.png",
+    "profile": "assets/images/ui/icon_profile.png",
+    "add": "assets/images/ui/icon_add.png",
+    "decorate": "assets/images/ui/icon_decorate.png",
+    "interact": "assets/images/ui/icon_interact.png",
+    "close": "assets/images/ui/icon_close.png"
+  },
+  "mascot": {
+    "asset": "assets/images/mascot.png",
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "columns": 2,
+    "frameCount": 4,
+    "stepTime": 0.24,
+    "renderSize": 180,
+    "spawn": [756, 790],
+    "portraitAsset": "assets/images/mascot_idle.png"
+  },
+  "props": {
+    "exit": {
+      "asset": "assets/images/store/door.png",
+      "position": [768, 404],
+      "size": 294,
+      "interactionOffset": [0, 100],
+      "action": "exit",
+      "anchorY": 0.951171875,
+      "baseWidth": 0.84,
+      "baseDepth": 0.19
+    },
+    "library": {
+      "asset": "assets/images/topdown/cabinet_v2_body.png",
+      "position": [530, 600],
+      "size": 280,
+      "slotsAsset": "assets/images/topdown/cabinet_v2.slots.json",
+      "fallbackAsset": "assets/images/topdown/library.png",
+      "interactionOffset": [0, 95],
+      "anchorY": 0.95,
+      "labelTop": 0.06,
+      "baseWidth": 0.82,
+      "baseDepth": 0.18,
+      "badgeAnchor": [392, 78]
+    },
+    "info_stand": {
+      "asset": "assets/images/topdown/info_stand.png",
+      "position": [992, 846],
+      "size": 230,
+      "interactionOffset": [0, 70],
+      "action": "today",
+      "anchorY": 0.9375,
+      "labelTop": 0.08,
+      "baseWidth": 0.7,
+      "baseDepth": 0.3
+    },
+    "toolbox": {
+      "asset": "assets/images/topdown/toolbox.png",
+      "position": [1030, 560],
+      "size": 140,
+      "fallbackAsset": "assets/images/ui/icon_decorate.png",
+      "interactionOffset": [-110, 30],
+      "action": "decorate",
+      "anchorY": 0.95,
+      "baseWidth": 0.7,
+      "baseDepth": 0.3
+    },
+    "plant": {
+      "asset": "assets/images/topdown/plant.png",
+      "position": [486, 846],
+      "size": 160,
+      "interactionOffset": [0, 70]
+    },
+    "lantern": {
+      "asset": "assets/images/topdown/lantern.png",
+      "position": [1350, 606],
+      "size": 125
+    },
+    "beanbag": {
+      "asset": "assets/images/topdown/beanbag.png",
+      "position": [570, 1470],
+      "size": 200,
+      "baseWidth": 0.7,
+      "baseDepth": 0.25
+    },
+    "star_cushion": {
+      "asset": "assets/images/topdown/star_cushion.png",
+      "position": [690, 1500],
+      "size": 110,
+      "baseWidth": 0.6,
+      "baseDepth": 0.3
+    },
+    "great_chest": {
+      "asset": "assets/images/topdown/great_chest_logo_s1.png",
+      "position": [768, 1150],
+      "size": 236,
+      "action": "chest",
+      "anchorY": 0.83,
+      "labelTop": 0.05,
+      "baseWidth": 0.7,
+      "baseDepth": 0.3,
+      "interactionOffset": [0, 60],
+      "fallbackAsset": "assets/images/topdown/great_chest_logo_s1.png"
+    },
+    "floor_lamp": {
+      "asset": "assets/images/topdown/floor_lamp.png",
+      "position": [440, 1300],
+      "size": 220,
+      "fallbackAsset": "assets/images/topdown/lantern.png",
+      "anchorY": 0.95,
+      "baseWidth": 0.35,
+      "baseDepth": 0.2
+    },
+    "jukebox": {
+      "asset": "assets/images/topdown/jukebox.png",
+      "position": [1320, 1620],
+      "size": 230,
+      "fallbackAsset": "assets/images/topdown/arcade.png",
+      "action": "music",
+      "interactionOffset": [0, 80],
+      "anchorY": 0.95,
+      "baseWidth": 0.55,
+      "baseDepth": 0.25,
+      "rotations": true
+    },
+    "neon_sign": {
+      "asset": "assets/images/topdown/neon_sign.png",
+      "position": [1338, 1046],
+      "size": 150,
+      "anchorY": 0.951171875,
+      "baseWidth": 0.5,
+      "baseDepth": 0.18
+    },
+    "trophy_shelf": {
+      "asset": "assets/images/topdown/trophy_shelf.png",
+      "position": [218, 1128],
+      "size": 170,
+      "anchorY": 0.951171875,
+      "baseWidth": 0.8,
+      "baseDepth": 0.2
+    },
+    "plus_aquarium": {
+      "asset": "assets/images/topdown/plus_aquarium.png",
+      "fallbackAsset": "assets/images/topdown/lantern.png",
+      "position": [1180, 1776],
+      "size": 180,
+      "anchorY": 0.95,
+      "baseWidth": 0.6,
+      "baseDepth": 0.25
+    },
+    "plus_gaming_throne": {
+      "asset": "assets/images/topdown/plus_gaming_throne.png",
+      "fallbackAsset": "assets/images/topdown/lantern.png",
+      "position": [680, 2090],
+      "size": 190,
+      "anchorY": 0.95,
+      "baseWidth": 0.55,
+      "baseDepth": 0.28,
+      "rotations": true
+    },
+    "plus_led_shelf": {
+      "asset": "assets/images/topdown/plus_led_shelf.png",
+      "fallbackAsset": "assets/images/topdown/lantern.png",
+      "position": [1330, 1300],
+      "size": 200,
+      "anchorY": 0.95,
+      "baseWidth": 0.7,
+      "baseDepth": 0.2,
+      "rotations": true
+    },
+    "plus_crt_stack": {
+      "asset": "assets/images/topdown/plus_crt_stack.png",
+      "fallbackAsset": "assets/images/topdown/lantern.png",
+      "position": [200, 1650],
+      "size": 170,
+      "anchorY": 0.95,
+      "baseWidth": 0.6,
+      "baseDepth": 0.25
+    },
+    "plus_snack_cart": {
+      "asset": "assets/images/topdown/plus_snack_cart.png",
+      "fallbackAsset": "assets/images/topdown/lantern.png",
+      "position": [1250, 2060],
+      "size": 180,
+      "anchorY": 0.95,
+      "baseWidth": 0.6,
+      "baseDepth": 0.28
+    },
+    "plus_cat_tower": {
+      "asset": "assets/images/topdown/plus_cat_tower.png",
+      "fallbackAsset": "assets/images/topdown/lantern.png",
+      "position": [1300, 1850],
+      "size": 210,
+      "anchorY": 0.95,
+      "baseWidth": 0.5,
+      "baseDepth": 0.22,
+      "rotations": true
+    },
+    "plus_trophy_pedestal": {
+      "asset": "assets/images/topdown/plus_trophy_pedestal.png",
+      "fallbackAsset": "assets/images/topdown/lantern.png",
+      "position": [950, 2130],
+      "size": 140,
+      "anchorY": 0.95,
+      "baseWidth": 0.5,
+      "baseDepth": 0.25
+    },
+    "plus_starlight_lamp": {
+      "asset": "assets/images/topdown/plus_starlight_lamp.png",
+      "fallbackAsset": "assets/images/topdown/lantern.png",
+      "position": [700, 1440],
+      "size": 160,
+      "anchorY": 0.95,
+      "baseWidth": 0.35,
+      "baseDepth": 0.2
+    }
+  },
+  "floor": [
+    [120, 424],
+    [1416, 424],
+    [1416, 2200],
+    [120, 2200]
+  ],
+  "placementSlots": [
+    [300, 1420],
+    [1250, 1420],
+    [768, 1760],
+    [300, 2100],
+    [1250, 2100]
+  ],
+  "defaultFurniture": [
+    "plant",
+    "floor_lamp",
+    "beanbag"
+  ]
+}

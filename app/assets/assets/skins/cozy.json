@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "id": "cozy",
+  "name": "Cozy room",
+  "scene": {
+    "width": 1536,
+    "height": 1024
+  },
+  "portraitViewport": {
+    "width": 1024,
+    "height": 1080
+  },
+  "portraitOrigin": [
+    256,
+    0
+  ],
+  "backgroundAsset": "assets/images/room.png",
+  "palette": {
+    "background": "#101529",
+    "accent": "#FFD76A"
+  },
+  "uiIcons": {
+    "library": "assets/images/ui/icon_library.png",
+    "profile": "assets/images/ui/icon_profile.png",
+    "add": "assets/images/ui/icon_add.png",
+    "decorate": "assets/images/ui/icon_decorate.png",
+    "interact": "assets/images/ui/icon_interact.png",
+    "close": "assets/images/ui/icon_close.png"
+  },
+  "mascot": {
+    "asset": "assets/images/mascot.png",
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "columns": 2,
+    "frameCount": 4,
+    "stepTime": 0.24,
+    "renderSize": 150,
+    "spawn": [
+      760,
+      680
+    ],
+    "portraitAsset": "assets/images/mascot_idle.png"
+  },
+  "props": {
+    "library": {
+      "asset": "assets/images/library.png",
+      "position": [
+        1110,
+        790
+      ],
+      "size": 260,
+      "interactionOffset": [
+        -65,
+        -20
+      ]
+    },
+    "arcade": {
+      "asset": "assets/images/decor_arcade.png",
+      "position": [
+        590,
+        725
+      ],
+      "size": 205,
+      "interactionOffset": [
+        70,
+        30
+      ]
+    },
+    "plant": {
+      "asset": "assets/images/decor_plant.png",
+      "position": [
+        600,
+        735
+      ],
+      "size": 160
+    },
+    "lantern": {
+      "asset": "assets/images/decor_lantern.png",
+      "position": [
+        755,
+        815
+      ],
+      "size": 125
+    }
+  },
+  "floor": [
+    [
+      455,
+      700
+    ],
+    [
+      760,
+      600
+    ],
+    [
+      1295,
+      690
+    ],
+    [
+      795,
+      910
+    ]
+  ],
+  "placementSlots": [
+    [
+      600,
+      735
+    ],
+    [
+      755,
+      815
+    ],
+    [
+      895,
+      755
+    ],
+    [
+      945,
+      650
+    ],
+    [
+      900,
+      870
+    ]
+  ]
+}

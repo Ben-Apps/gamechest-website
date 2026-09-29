@@ -1,0 +1,6 @@
+# Netlify – Weiterleitungen (Format: https://docs.netlify.com/routing/redirects/). Keine Sprachweiche.
+# /c/* bewusst NICHT umleiten: Kurzlinks gamechest.games/c/<key> landen auf 404.html, das /c/redirect.js lädt
+# (GrabGame/docs/specs/kurzlink_truhe.md) – erst mit dem nächsten App-Update live.
+# /app/ braucht keinen SPA-Fallback: die Flutter-Web-App routet per Hash (/app/#/login).
+/app   /app/   301
+/de    /de/    301
