@@ -1,6 +1,9 @@
 # Netlify – Weiterleitungen (Format: https://docs.netlify.com/routing/redirects/). Keine Sprachweiche.
-# /c/* bewusst NICHT umleiten: Kurzlinks gamechest.games/c/<key> landen auf 404.html, das /c/redirect.js lädt
-# (GrabGame/docs/specs/kurzlink_truhe.md) – erst mit dem nächsten App-Update live.
+# Kurzlinks gamechest.games/c/<key>: 200-Rewrite auf /c/index.html (kein 404, keine JS-Weiterleitung), damit
+# Messenger-Vorschauen die og-Tags der Truhen-Seite sehen. share.js liest den Key aus dem Pfad (oder aus ?k=).
+# Vorhandene Dateien (/c/share.js, /c/redirect.js, /c/index.html) werden nicht überschattet (Netlify-Shadowing).
+# 404.html → /c/redirect.js bleibt als Fallback für GitHub Pages. Spec: GrabGame/docs/specs/kurzlink_truhe.md
 # /app/ braucht keinen SPA-Fallback: die Flutter-Web-App routet per Hash (/app/#/login).
 /app   /app/   301
 /de    /de/    301
+/c/*   /c/index.html   200

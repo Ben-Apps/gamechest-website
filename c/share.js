@@ -1,5 +1,5 @@
 /*
- * gamechest.games/c/?k=<key> – zeigt eine geteilte Truhe ohne App und ohne Konto.
+ * gamechest.games/c/<key> bzw. /c/?k=<key> – zeigt eine geteilte Truhe ohne App und ohne Konto.
  * Spec: GrabGame/docs/specs/kurzlink_truhe.md
  *
  * Lädt Code + Snapshot über die Edge Function chest-share (action "resolve", kein Login), füllt die
@@ -20,8 +20,13 @@
   var root = document.querySelector('[data-chest-root]');
   if (!root) return;
 
+  // Key aus dem Pfad (/c/K7Q2XM9P – Netlify liefert /c/index.html per 200-Rewrite aus, siehe _redirects)
+  // oder aus ?k= (/c/?k=K7Q2XM9P – alter Weg über 404.html → redirect.js, GitHub Pages). Beides wird unterstützt.
   var params = new URLSearchParams(location.search);
-  var key = (params.get('k') || '').trim().toUpperCase();
+  var pathMatch = /^\/c\/([^\/?#]+)\/?$/.exec(location.pathname);
+  var key = (params.get('k') || (pathMatch && pathMatch[1] !== 'index.html' ? decodeURIComponent(pathMatch[1]) : '') || '')
+    .trim()
+    .toUpperCase();
   var code = '';
 
   function show(state, reason) {

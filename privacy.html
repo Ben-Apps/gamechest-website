@@ -126,11 +126,24 @@ the demo. Legal basis: Art. 6(1)(b) GDPR. We also use RevenueCat's dashboard to 
 aggregate (for example number of subscribers, trials, renewals and revenue); legal basis: Art. 6(1)(f) GDPR, our
 legitimate interest in running the subscription business. Deleting your GameChest account does not cancel a running
 subscription; you cancel it in the App Store or Google Play.</p>
+<p><strong>Free tries and usage counter:</strong> without Plus, your account can try three functions three times each:
+adding a game recognised from a link or post (link import), adding a game recognised from a photo or barcode (camera),
+and an answer from Till (3.10). The three tries count once per account, not per device and not per day. After that
+the app shows the Plus offer. Searching for games by name and saving, finishing, rating and sharing games stay free
+and unlimited. With Plus, link import and camera are unlimited; Till is subject to fair use of up to 100 answers per
+calendar month. To count this, our server stores one entry per counted use in a usage counter: your user ID, the
+function (link import, camera, Till, or Till with Plus), the ID of the use (for a saved game the ID of its new entry in
+your collection, for Till a random ID), the period (the calendar month for Till with Plus, none for the free tries) and
+the time. The counter contains no links, photos, text or game titles. A use that fails (the game could not be saved,
+Till gave no answer) is given back and not counted. In the demo nothing is counted. Legal basis: Art. 6(1)(b) GDPR.
+Storage period: section 5.</p>
 
 <h3>3.7 Data stored only on your device</h3>
 <p>GameChest stores settings (for example sound and music, tour progress), demo data, discoveries you shared to GameChest
 from other apps (links, text or screenshots, through the share extension on iPhone or the share menu on Android;
-kept until you review or discard them, a shared screenshot is read on your device and never uploaded). None of this leaves your device unless you actively use the related feature. When you paste a
+kept until you review or discard them, a shared screenshot is read on your device and never uploaded), and games and
+links you saved for later when a function's free tries were used up (3.6; at most 50, stored for your account on this
+device and deleted with your account). None of this leaves your device unless you actively use the related feature. When you paste a
 link, GameChest checks the clipboard only while the empty search field is active in order to offer "Paste link".
 Legal basis: § 25(2) no. 2 TDDDG (strictly necessary) and Art. 6(1)(b) GDPR.</p>
 
@@ -163,8 +176,9 @@ wrong or out of date. Please check facts, prices and age ratings before you rely
 players aged 13 and over. Do not share personal details with him, such as your real name, address, school or phone
 number. If an answer seems wrong or inappropriate, long-press it in the chat and choose &ldquo;Report answer&rdquo;.
 We then store the reported answer (only Till's answer, not your messages) with your user ID and the time for up to
-180 days to check it. To keep the daily answer limit we store a counter per day (user ID, date, number of answers);
-a daily job deletes counters older than 31 days. The conversation itself is not stored on our servers. Legal basis: Art. 6(1)(a) GDPR (your consent
+180 days to check it. Till's answers are counted in the usage counter described in 3.6 (three answers to try
+without Plus, fair use of up to 100 answers per calendar month with Plus). Daily answer counters from earlier
+versions (user ID, date, number of answers) are deleted by a daily job once they are older than 31 days. The conversation itself is not stored on our servers. Legal basis: Art. 6(1)(a) GDPR (your consent
 in the chat) and Art. 6(1)(b) GDPR; for reports also Art. 6(1)(f) GDPR (our legitimate interest in keeping Till safe).
 You can withdraw your consent at any time with effect for the future (Art. 7(3) GDPR): in the app under Settings →
 AI advisor (Till): Consent → Withdraw consent. From then on nothing is sent to Anthropic, and Till asks for your
@@ -187,7 +201,8 @@ transmits your IP address to Google; legal basis: Art. 6(1)(f) GDPR (displaying 
 
 <h3>3.12 Photo AI (recognising a cover with AI)</h3>
 <p>If the text read from a photo on your device finds no game, the app on iPhone and Android can offer
-&ldquo;Recognise with AI&rdquo;. Nothing is sent automatically: only when you tap it, and only after you agree in the
+&ldquo;Recognise with AI&rdquo;. Photo AI is part of GameChest Plus (3.6): without Plus, tapping it only opens the Plus
+offer; no consent is asked and nothing is sent. Without Plus, photos are read only on your device (3.4). Nothing is sent automatically: only when you tap it with Plus, and only after you agree in the
 dialog the first time, do we send, through our server function, a reduced copy of this one photo (at most 1024 pixels
 on its longest side, as JPEG, with all EXIF data such as location, time and camera model removed on your device) and the
 text read from it to the AI model <strong>Claude</strong> from <strong>Anthropic</strong> (same provider and terms as in
@@ -196,7 +211,8 @@ Terms; deletion by Anthropic within 30 days, longer only if flagged for violatin
 up to three game titles, which the app then searches in the game catalogs like a typed title (3.3). <strong>We do not
 store the photo or its text</strong>, neither in a database nor with your account, and our server logs never contain
 the photo, the text or the recognised titles. To keep the daily limit we store a counter per day (user ID, date, number
-of photos); a daily job deletes counters older than 31 days, and they are deleted immediately with your account. Legal
+of photos); a daily job deletes counters older than 31 days, and they are deleted immediately with your account. A game
+you then add counts as a camera use (3.6). Legal
 basis: Art. 6(1)(a) GDPR (your consent in the app). You can withdraw your consent at any time with effect for the future
 (Art. 7(3) GDPR): in the app under Settings &rarr; Photo AI: Consent &rarr; Withdraw consent. From then on no photo is
 sent, and the app asks again before the next one. Withdrawing does not affect the lawfulness of processing before the
@@ -233,7 +249,7 @@ to share your chest).</p>
 <h2>4. Service providers and recipients</h2>
 <div class="scroll"><table>
 <tr><th>Recipient</th><th>Role</th><th>Data</th></tr>
-<tr><td>Supabase, Inc. (servers in the EU, AWS region eu-west-1, Ireland)</td><td>Processor: hosting, database, sign-in, server functions, account emails</td><td>Account, collection, profile, shared chest copies (3.14), server logs</td></tr>
+<tr><td>Supabase, Inc. (servers in the EU, AWS region eu-west-1, Ireland)</td><td>Processor: hosting, database, sign-in, server functions, account emails</td><td>Account, collection, profile, usage counter (3.6), shared chest copies (3.14), server logs</td></tr>
 <tr><td>Hostinger International Ltd. (Cyprus, EU)</td><td>Processor: delivery of account emails via SMTP (3.9)</td><td>Email address, email content</td></tr>
 <tr><td>RevenueCat, Inc. (USA)</td><td>Processor: subscription management</td><td>User ID, purchase and subscription data</td></tr>
 <tr><td>Anthropic Ireland, Limited (Ireland) / Anthropic, PBC (USA), Claude API</td><td>Processor: AI answers for Till (3.10) and photo recognition (3.12), each only after your consent</td><td>Chat messages, chest titles/platforms/statuses, profile platforms and genres; for the photo AI a reduced photo without EXIF data and the text read from it</td></tr>
@@ -258,8 +274,12 @@ request (only your GameChest user ID) and repeats it automatically every 6 hours
 removed 30 days after RevenueCat confirmed the deletion. If the record still cannot be deleted automatically, we
 delete it at RevenueCat by hand; you can also write to us and we will do so within 30 days. Deleting the account does not cancel a running subscription (3.6). Apple and Google keep their
 own purchase records under their own policies.</li>
-<li><strong>Till's daily answer counter:</strong> deleted by a daily job once it is older than 31 days, and
-immediately when you delete your account (3.10).</li>
+<li><strong>Usage counter for link import, camera and Till (3.6):</strong> the entries for the three free tries are
+kept until you delete your account, because they count once per account. Entries for Till with Plus (per calendar
+month) are deleted by a daily job once they are older than the previous calendar month. Everything is deleted
+immediately when you delete your account.</li>
+<li><strong>Till's daily answer counters from earlier versions:</strong> deleted by a daily job once they are older
+than 31 days, and immediately when you delete your account (3.10).</li>
 <li><strong>Search input:</strong> not stored in a database or with your account; the search term and its catalog
 results stay in the server function's working memory for at most 5 minutes and are then deleted (3.3).</li>
 <li><strong>Till's reported answers:</strong> up to 180 days, deleted earlier with your account. Anthropic deletes
@@ -363,12 +383,25 @@ Demo einer anonymen Kennung. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Außer
 RevenueCat-Dashboard zusammengefasst aus (zum Beispiel Zahl der Abonnenten, Testphasen, Verlängerungen und Umsatz);
 Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO, unser berechtigtes Interesse am Betrieb des Abo-Angebots. Das Löschen deines GameChest-Kontos
 kündigt ein laufendes Abo nicht; kündigen kannst du es im App Store bzw. bei Google Play.</p>
+<p><strong>Gratis-Tests und Nutzungszähler:</strong> Ohne Plus kann dein Konto drei Funktionen je dreimal ausprobieren:
+ein über einen Link oder Beitrag erkanntes Spiel hinzufügen (Link-Import), ein über Foto oder Barcode erkanntes Spiel
+hinzufügen (Kamera) und eine Antwort von Till (3.10). Die drei Tests gelten einmal pro Konto, nicht pro Gerät und nicht
+pro Tag. Danach zeigt die App das Plus-Angebot. Spiele per Name suchen sowie Spiele speichern, abschließen, bewerten
+und teilen bleiben kostenlos und unbegrenzt. Mit Plus sind Link-Import und Kamera unbegrenzt; für Till gilt Fair Use
+von bis zu 100 Antworten pro Kalendermonat. Zum Zählen speichert unser Server je gezählter Nutzung einen Eintrag in
+einem Nutzungszähler: deine Benutzer-ID, die Funktion (Link-Import, Kamera, Till oder Till mit Plus), die Kennung der
+Nutzung (bei einem gespeicherten Spiel die Kennung seines neuen Eintrags in deiner Sammlung, bei Till eine
+Zufallskennung), den Zeitraum (Kalendermonat bei Till mit Plus, keiner bei den Gratis-Tests) und den Zeitpunkt. Der
+Zähler enthält keine Links, Fotos, Texte oder Spieltitel. Schlägt eine Nutzung fehl (das Spiel ließ sich nicht
+speichern, Till hat nicht geantwortet), wird sie zurückgebucht und nicht gezählt. In der Demo wird nichts gezählt.
+Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Speicherdauer: Abschnitt 5.</p>
 
 <h3>3.7 Nur auf deinem Gerät gespeicherte Daten</h3>
 <p>GameChest speichert Einstellungen (zum Beispiel Ton und Musik, Tour-Fortschritt), Demo-Daten, aus anderen Apps mit
 GameChest geteilte Funde (Links, Text oder Screenshots, auf dem iPhone über die Teilen-Erweiterung, auf Android über das
 Teilen-Menü; bis du sie prüfst oder verwirfst, ein geteilter Screenshot wird auf deinem Gerät gelesen und nie
-hochgeladen). Nichts davon verlässt dein Gerät, solange du die jeweilige Funktion nicht
+hochgeladen) sowie Spiele und Links, die du dir gemerkt hast, als die Gratis-Tests einer Funktion aufgebraucht waren
+(3.6; höchstens 50, für dein Konto auf diesem Gerät gespeichert und mit deinem Konto gelöscht). Nichts davon verlässt dein Gerät, solange du die jeweilige Funktion nicht
 aktiv nutzt. Die Zwischenablage prüft GameChest nur, während das leere Suchfeld aktiv ist, um „Link einfügen“
 anzubieten. Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG (unbedingt erforderlich) und Art. 6 Abs. 1 lit. b DSGVO.</p>
 
@@ -403,8 +436,10 @@ darauf verlässt.</p>
 und Spieler ab 13 Jahren passend zu halten. Teile ihm keine persönlichen Daten mit, etwa deinen echten Namen, deine
 Adresse, Schule oder Telefonnummer. Wirkt eine Antwort falsch oder unangemessen, halte sie im Chat gedrückt und wähle
 „Antwort melden“. Wir speichern dann die gemeldete Antwort (nur Tills Antwort, nicht deine Nachrichten) mit deiner
-Benutzer-ID und dem Zeitpunkt für bis zu 180 Tage, um sie zu prüfen. Für das tägliche Antwortkontingent speichern wir
-je Tag einen Zähler (Benutzer-ID, Datum, Anzahl); ein täglicher Job löscht Zähler, die älter als 31 Tage sind. Das Gespräch selbst speichern wir nicht auf
+Benutzer-ID und dem Zeitpunkt für bis zu 180 Tage, um sie zu prüfen. Tills Antworten zählt der in 3.6 beschriebene
+Nutzungszähler (drei Antworten zum Ausprobieren ohne Plus, Fair Use von bis zu 100 Antworten pro Kalendermonat mit
+Plus). Tägliche Antwortzähler aus früheren Versionen (Benutzer-ID, Datum, Anzahl) löscht ein täglicher Job, sobald sie
+älter als 31 Tage sind. Das Gespräch selbst speichern wir nicht auf
 unseren Servern. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung im Chat) und Art. 6 Abs. 1 lit. b
 DSGVO; für Meldungen zusätzlich Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse, Till sicher zu halten).
 Deine Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO): in der App unter
@@ -430,7 +465,9 @@ Abs. 1 lit. f DSGVO (korrekte Darstellung von Text).</p>
 
 <h3>3.12 Foto-KI (Cover mit KI erkennen)</h3>
 <p>Findet der auf deinem Gerät aus einem Foto gelesene Text kein Spiel, kann die App auf iPhone und Android
-&bdquo;Mit KI erkennen&ldquo; anbieten. Automatisch wird nichts gesendet: Erst wenn du darauf tippst, und beim ersten Mal erst
+&bdquo;Mit KI erkennen&ldquo; anbieten. Die Foto-KI gehört zu GameChest Plus (3.6): Ohne Plus öffnet ein Tipp darauf nur
+das Plus-Angebot; es wird weder eine Einwilligung abgefragt noch etwas gesendet. Ohne Plus werden Fotos nur auf deinem
+Gerät gelesen (3.4). Automatisch wird nichts gesendet: Erst wenn du mit Plus darauf tippst, und beim ersten Mal erst
 nach deiner Zustimmung im Dialog, übermitteln wir über unsere Server-Funktion eine verkleinerte Kopie dieses einen Fotos
 (höchstens 1024 Pixel an der längsten Seite, als JPEG, alle EXIF-Daten wie Standort, Zeitpunkt und Kameramodell schon auf
 deinem Gerät entfernt) und den darauf gelesenen Text an das KI-Modell <strong>Claude</strong> von <strong>Anthropic</strong>
@@ -441,7 +478,7 @@ zurück, die die App dann wie einen eingetippten Titel in den Spielekatalogen su
 speichern wir nicht</strong>, weder in einer Datenbank noch bei deinem Konto, und unsere Server-Logs enthalten nie das Foto,
 den Text oder die erkannten Titel. Für das Tageslimit speichern wir je Tag einen Zähler (Benutzer-ID, Datum, Anzahl
 der Fotos); ein täglicher Job löscht Zähler, die älter als 31 Tage sind, und mit deinem Konto werden sie sofort gelöscht.
-Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung in der App). Deine Einwilligung kannst du jederzeit mit
+Ein danach hinzugefügtes Spiel zählt als Kamera-Nutzung (3.6). Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung in der App). Deine Einwilligung kannst du jederzeit mit
 Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO): in der App unter Settings &rarr; Photo AI: Consent &rarr;
 Withdraw consent (auf Deutsch: Einstellungen &rarr; Foto-KI: Einwilligung &rarr; Einwilligung widerrufen). Danach wird kein
 Foto mehr gesendet, und die App fragt vor dem nächsten erneut. Die Rechtmäßigkeit der Verarbeitung bis zum Widerruf
@@ -479,7 +516,7 @@ Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (du bittest uns, deine Truhe zu teil
 <h2>4. Dienstleister und Empfänger</h2>
 <div class="scroll"><table>
 <tr><th>Empfänger</th><th>Rolle</th><th>Daten</th></tr>
-<tr><td>Supabase, Inc. (Server in der EU, AWS-Region eu-west-1, Irland)</td><td>Auftragsverarbeiter: Hosting, Datenbank, Anmeldung, Serverfunktionen, Konto-E-Mails</td><td>Konto, Sammlung, Profil, geteilte Truhen-Kopien (3.14), Server-Logs</td></tr>
+<tr><td>Supabase, Inc. (Server in der EU, AWS-Region eu-west-1, Irland)</td><td>Auftragsverarbeiter: Hosting, Datenbank, Anmeldung, Serverfunktionen, Konto-E-Mails</td><td>Konto, Sammlung, Profil, Nutzungszähler (3.6), geteilte Truhen-Kopien (3.14), Server-Logs</td></tr>
 <tr><td>Hostinger International Ltd. (Zypern, EU)</td><td>Auftragsverarbeiter: Zustellung der Konto-E-Mails per SMTP (3.9)</td><td>E-Mail-Adresse, Inhalt der E-Mail</td></tr>
 <tr><td>RevenueCat, Inc. (USA)</td><td>Auftragsverarbeiter: Abo-Verwaltung</td><td>Benutzer-ID, Kauf- und Abodaten</td></tr>
 <tr><td>Anthropic Ireland, Limited (Irland) / Anthropic, PBC (USA), Claude API</td><td>Auftragsverarbeiter: KI-Antworten für Till (3.10) und Foto-Erkennung (3.12), jeweils nur nach deiner Einwilligung</td><td>Chat-Nachrichten, Titel/Plattform/Status der Truhenspiele, Profil-Plattformen und -Genres; für die Foto-KI ein verkleinertes Foto ohne EXIF-Daten und der darauf gelesene Text</td></tr>
@@ -505,8 +542,12 @@ deine GameChest-Benutzer-ID) und wiederholt sie automatisch alle 6 Stunden, höc
 30 Tage nach der bestätigten Löschung bei RevenueCat entfernt. Lässt sich der Datensatz auch so nicht löschen,
 löschen wir ihn bei RevenueCat von Hand; du kannst uns auch schreiben, dann tun wir das innerhalb von 30 Tagen. Das Löschen des Kontos kündigt ein laufendes Abo nicht (3.6). Apple und Google bewahren eigene
 Kaufbelege nach eigenen Regeln auf.</li>
-<li><strong>Tills Tageszähler:</strong> ein täglicher Job löscht ihn, sobald er älter als 31 Tage ist, und sofort,
-wenn du dein Konto löschst (3.10).</li>
+<li><strong>Nutzungszähler für Link-Import, Kamera und Till (3.6):</strong> Die Einträge der drei Gratis-Tests
+bleiben, bis du dein Konto löschst, weil sie einmal pro Konto gelten. Einträge für Till mit Plus (je Kalendermonat)
+löscht ein täglicher Job, sobald sie älter als der vorige Kalendermonat sind. Mit deinem Konto wird alles sofort
+gelöscht.</li>
+<li><strong>Tills Tageszähler aus früheren Versionen:</strong> ein täglicher Job löscht sie, sobald sie älter als
+31 Tage sind, und sofort, wenn du dein Konto löschst (3.10).</li>
 <li><strong>Sucheingaben:</strong> nicht in einer Datenbank und nicht zu deinem Konto gespeichert; Suchbegriff und
 Katalogtreffer bleiben höchstens 5 Minuten im Arbeitsspeicher der Serverfunktion und werden dann gelöscht (3.3).</li>
 <li><strong>Von dir gemeldete Till-Antworten:</strong> bis zu 180 Tage, mit deinem Konto früher gelöscht. Anthropic
