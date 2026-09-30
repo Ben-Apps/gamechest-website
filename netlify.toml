@@ -8,6 +8,8 @@
   command = ""
 
 # Keine HTML-Nachbearbeitung durch Netlify („Pretty URLs“ schrieb Links wie href="privacy.html" in href='/privacy' um).
-# Die Rechtsseiten privacy/terms/support.html müssen live byte-gleich mit GrabGame/web/legal sein.
+# Die Rechtsseiten privacy/terms/support.html sollen live byte-gleich mit GrabGame/web/legal sein.
+[build.processing]
+  skip_processing = true
 [build.processing.html]
   pretty_urls = false
