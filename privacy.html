@@ -99,6 +99,20 @@ and from two characters on), so a search term is sent before you press Enter; a 
 confirm it. The search field in your Chest tab only filters the games you already saved; this happens on your device
 and sends nothing. Only when you save a game do the
 details you confirm become part of your collection (3.2). Legal basis: Art. 6(1)(b) GDPR.</p>
+<p><strong>AI check of the suggestions.</strong> Before the suggestions come back, our server function has them checked
+by the AI model <strong>Claude</strong> from <strong>Anthropic</strong> (same provider and terms as in 3.10: Anthropic
+Ireland, Limited; processing also in the USA; no training on this data under Anthropic's Commercial Terms; deletion by
+Anthropic within 30 days, longer only if flagged for violating its Usage Policy). This happens for every search, link,
+photo text and barcode, without a separate consent, because it is part of how the search works. Anthropic receives only
+your input (the search term; the text read from a photo; the product name the barcode database returned; for a link its
+title, description, the text you shared with it and the website's domain, never the full address) together with up to
+eight catalog suggestions (title, platforms, year). It never receives your name, email address or user ID. Anthropic
+returns which suggestions fit and in what order, and at most one game title that we then look up in the game database.
+If a link or text finds no game, the server function may also ask the same model which game it mentions, with the same
+data and terms. So that the same input is not checked twice, the server function reuses the result for up to 5 minutes
+from its working memory, not linked to any account or user ID; the memory holds only a limited number of entries and a
+restart clears it. If the AI check fails or takes longer than 4 seconds, you get the suggestions without it. Legal
+basis: Art. 6(1)(b) GDPR.</p>
 
 <h3>3.4 Photos, camera and on-device text recognition</h3>
 <p>If you allow camera or photo access, GameChest reads barcodes and text from the picture <strong>on your
@@ -181,7 +195,7 @@ without Plus, fair use of up to 150 answers per calendar month with Plus). Daily
 versions (user ID, date, number of answers) are deleted by a daily job once they are older than 31 days. The conversation itself is not stored on our servers. Legal basis: Art. 6(1)(a) GDPR (your consent
 in the chat) and Art. 6(1)(b) GDPR; for reports also Art. 6(1)(f) GDPR (our legitimate interest in keeping Till safe).
 You can withdraw your consent at any time with effect for the future (Art. 7(3) GDPR): in the app under Settings →
-AI advisor (Till): Consent → Withdraw consent. From then on nothing is sent to Anthropic, and Till asks for your
+AI advisor (Till): Consent → Withdraw consent. From then on Till sends nothing more to Anthropic (the AI check of search suggestions in 3.3 is separate), and Till asks for your
 consent again the next time you open him. Withdrawing does not affect the lawfulness of processing before the
 withdrawal. In the demo, Till answers on your device without AI.</p>
 
@@ -190,7 +204,7 @@ withdrawal. In the demo, Till answers on your device without AI.</p>
 (Netlify, Inc., USA). When you open it, Netlify receives your IP address and processes
 it together with the time and the requested address in its server logs to deliver and secure the site; legal basis:
 Art. 6(1)(f) GDPR. The web app uses the same services as the app (Supabase for your account and collection, the game
-catalogs for search and covers, Anthropic Claude for Till after your consent), as described above. It offers no purchases,
+catalogs for search and covers, Anthropic Claude for the AI check of search suggestions and, after your consent, for Till), as described above. It offers no purchases,
 no sharing from other apps, no barcode scanning and no photos, so RevenueCat, the store payment services and ML Kit are
 not involved. Your sign-in (session token) and your settings are kept in your browser's local storage; this is strictly
 necessary to keep you signed in and to provide the service you requested (§ 25(2) no. 2 TDDDG). Signing out removes
@@ -202,7 +216,7 @@ transmits your IP address to Google; legal basis: Art. 6(1)(f) GDPR (displaying 
 <h3>3.12 Photo AI (recognising a cover with AI)</h3>
 <p>If the text read from a photo on your device finds no game, the app on iPhone and Android can offer
 &ldquo;Recognise with AI&rdquo;. Photo AI is part of GameChest Plus (3.6): without Plus, tapping it only opens the Plus
-offer; no consent is asked and nothing is sent. Without Plus, photos are read only on your device (3.4). Nothing is sent automatically: only when you tap it with Plus, and only after you agree in the
+offer; no consent is asked and nothing is sent. Without Plus, photos are read only on your device (3.4). The photo itself is never sent automatically: only when you tap it with Plus, and only after you agree in the
 dialog the first time, do we send, through our server function, a reduced copy of this one photo (at most 1024 pixels
 on its longest side, as JPEG, with all EXIF data such as location, time and camera model removed on your device) and the
 text read from it to the AI model <strong>Claude</strong> from <strong>Anthropic</strong> (same provider and terms as in
@@ -252,7 +266,7 @@ to share your chest).</p>
 <tr><td>Supabase, Inc. (servers in the EU, AWS region eu-west-1, Ireland)</td><td>Processor: hosting, database, sign-in, server functions, account emails</td><td>Account, collection, profile, usage counter (3.6), shared chest copies (3.14), server logs</td></tr>
 <tr><td>Hostinger International Ltd. (Cyprus, EU)</td><td>Processor: delivery of account emails via SMTP (3.9)</td><td>Email address, email content</td></tr>
 <tr><td>RevenueCat, Inc. (USA)</td><td>Processor: subscription management</td><td>User ID, purchase and subscription data</td></tr>
-<tr><td>Anthropic Ireland, Limited (Ireland) / Anthropic, PBC (USA), Claude API</td><td>Processor: AI answers for Till (3.10) and photo recognition (3.12), each only after your consent</td><td>Chat messages, chest titles/platforms/statuses, profile platforms and genres; for the photo AI a reduced photo without EXIF data and the text read from it</td></tr>
+<tr><td>Anthropic Ireland, Limited (Ireland) / Anthropic, PBC (USA), Claude API</td><td>Processor: AI check of search suggestions (3.3); AI answers for Till (3.10) and photo recognition (3.12), each only after your consent</td><td>Search input without your identity and catalog suggestions (3.3); Chat messages, chest titles/platforms/statuses, profile platforms and genres; for the photo AI a reduced photo without EXIF data and the text read from it</td></tr>
 <tr><td>Apple (Apple Inc. / Apple Distribution International Ltd.)</td><td>App Store payments under Apple's own privacy policy</td><td>Purchase data</td></tr>
 <tr><td>Google (Google LLC / Google Ireland Ltd.)</td><td>ML Kit metrics (3.4); Google Play payments on Android</td><td>Technical metrics; purchase data on Android</td></tr>
 <tr><td>Netlify, Inc. (USA)</td><td>Hosting of the website and the web app (3.8, 3.11)</td><td>IP address, server logs</td></tr>
@@ -356,6 +370,22 @@ Pause und ab zwei Zeichen), ein Suchbegriff wird also gesendet, bevor du Enter d
 gesendet, wenn du ihn bestätigst. Das Suchfeld im Tab Chest filtert nur deine schon gespeicherten Spiele; das geschieht
 auf deinem Gerät und sendet nichts. Erst wenn du ein Spiel speicherst, werden die von dir
 bestätigten Angaben Teil deiner Sammlung (3.2). Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+<p><strong>KI-Prüfung der Vorschläge.</strong> Bevor die Vorschläge zurückkommen, lässt unsere Serverfunktion sie vom
+KI-Modell <strong>Claude</strong> von <strong>Anthropic</strong> prüfen (derselbe Anbieter und dieselben Bedingungen wie
+in 3.10: Anthropic Ireland, Limited; Verarbeitung auch in den USA; nach Anthropics Commercial Terms kein Training mit
+diesen Daten; Löschung bei Anthropic innerhalb von 30 Tagen, länger nur bei einer Markierung wegen eines Verstoßes gegen
+die Nutzungsrichtlinie). Das geschieht bei jeder Suche, jedem Link, jedem Foto-Text und jedem Barcode, ohne gesonderte
+Einwilligung, weil es Teil der Suche ist. Anthropic erhält nur deine Eingabe (den Suchbegriff; den aus einem Foto
+gelesenen Text; den Produktnamen, den die Barcode-Datenbank geliefert hat; bei einem Link dessen Titel, Beschreibung, den
+mitgeteilten Text und die Domain der Website, nie die vollständige Adresse) zusammen mit bis zu acht Katalogvorschlägen
+(Titel, Plattformen, Jahr). Dein Name, deine E-Mail-Adresse und deine Benutzer-ID gehen nie an Anthropic. Anthropic gibt
+zurück, welche Vorschläge passen und in welcher Reihenfolge, und höchstens einen Spieltitel, den wir dann in der
+Spieledatenbank nachschlagen. Findet ein Link oder Text kein Spiel, kann die Serverfunktion dasselbe Modell mit denselben
+Daten und Bedingungen auch fragen, welches Spiel darin genannt wird. Damit dieselbe Eingabe nicht zweimal geprüft wird,
+nutzt die Serverfunktion das Ergebnis bis zu 5 Minuten aus ihrem Arbeitsspeicher, ohne Bezug zu einem Konto oder einer
+Benutzer-ID; der Speicher fasst nur eine begrenzte Zahl von Einträgen, und ein Neustart leert ihn. Schlägt die KI-Prüfung
+fehl oder dauert sie länger als 4 Sekunden, bekommst du die Vorschläge ohne sie. Rechtsgrundlage: Art. 6 Abs. 1 lit. b
+DSGVO.</p>
 
 <h3>3.4 Fotos, Kamera und Texterkennung auf dem Gerät</h3>
 <p>Wenn du Kamera- oder Fotozugriff erlaubst, liest GameChest Barcodes und Text <strong>auf deinem Gerät</strong>; für die
@@ -443,7 +473,7 @@ Plus). Tägliche Antwortzähler aus früheren Versionen (Benutzer-ID, Datum, Anz
 unseren Servern. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung im Chat) und Art. 6 Abs. 1 lit. b
 DSGVO; für Meldungen zusätzlich Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse, Till sicher zu halten).
 Deine Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO): in der App unter
-Settings → AI advisor (Till): Consent → Withdraw consent. Danach wird nichts mehr an Anthropic übermittelt, und Till
+Settings → AI advisor (Till): Consent → Withdraw consent. Danach übermittelt Till nichts mehr an Anthropic (die KI-Prüfung der Suchvorschläge in 3.3 ist davon getrennt), und Till
 fragt beim nächsten Öffnen erneut. Die Rechtmäßigkeit der Verarbeitung bis zum Widerruf bleibt unberührt. In der Demo
 antwortet Till ohne KI auf deinem Gerät.</p>
 
@@ -452,8 +482,8 @@ antwortet Till ohne KI auf deinem Gerät.</p>
 (Netlify, Inc., USA) bereitgestellt. Beim Aufruf erhält Netlify deine
 IP-Adresse und verarbeitet sie zusammen mit Zeitpunkt und aufgerufener Adresse in seinen Server-Logs, um die Seite
 auszuliefern und abzusichern; Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Die Web-App nutzt dieselben Dienste wie die
-App (Supabase für Konto und Sammlung, die Spielekataloge für Suche und Cover, Anthropic Claude für Till nach deiner
-Einwilligung), wie oben beschrieben. Sie bietet keine Käufe, kein Teilen aus anderen Apps, keinen Barcode-Scan und keine
+App (Supabase für Konto und Sammlung, die Spielekataloge für Suche und Cover, Anthropic Claude für die KI-Prüfung der
+Suchvorschläge und, nach deiner Einwilligung, für Till), wie oben beschrieben. Sie bietet keine Käufe, kein Teilen aus anderen Apps, keinen Barcode-Scan und keine
 Fotos; RevenueCat, die Zahlungsdienste der Stores und ML Kit sind deshalb nicht beteiligt. Deine Anmeldung
 (Sitzungs-Token) und deine Einstellungen werden im lokalen Speicher deines Browsers gehalten; das ist unbedingt
 erforderlich, damit du angemeldet bleibst und den gewünschten Dienst nutzen kannst (§ 25 Abs. 2 Nr. 2 TDDDG). Beim
@@ -467,7 +497,7 @@ Abs. 1 lit. f DSGVO (korrekte Darstellung von Text).</p>
 <p>Findet der auf deinem Gerät aus einem Foto gelesene Text kein Spiel, kann die App auf iPhone und Android
 &bdquo;Mit KI erkennen&ldquo; anbieten. Die Foto-KI gehört zu GameChest Plus (3.6): Ohne Plus öffnet ein Tipp darauf nur
 das Plus-Angebot; es wird weder eine Einwilligung abgefragt noch etwas gesendet. Ohne Plus werden Fotos nur auf deinem
-Gerät gelesen (3.4). Automatisch wird nichts gesendet: Erst wenn du mit Plus darauf tippst, und beim ersten Mal erst
+Gerät gelesen (3.4). Das Foto selbst wird nie automatisch gesendet: Erst wenn du mit Plus darauf tippst, und beim ersten Mal erst
 nach deiner Zustimmung im Dialog, übermitteln wir über unsere Server-Funktion eine verkleinerte Kopie dieses einen Fotos
 (höchstens 1024 Pixel an der längsten Seite, als JPEG, alle EXIF-Daten wie Standort, Zeitpunkt und Kameramodell schon auf
 deinem Gerät entfernt) und den darauf gelesenen Text an das KI-Modell <strong>Claude</strong> von <strong>Anthropic</strong>
@@ -519,7 +549,7 @@ Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (du bittest uns, deine Truhe zu teil
 <tr><td>Supabase, Inc. (Server in der EU, AWS-Region eu-west-1, Irland)</td><td>Auftragsverarbeiter: Hosting, Datenbank, Anmeldung, Serverfunktionen, Konto-E-Mails</td><td>Konto, Sammlung, Profil, Nutzungszähler (3.6), geteilte Truhen-Kopien (3.14), Server-Logs</td></tr>
 <tr><td>Hostinger International Ltd. (Zypern, EU)</td><td>Auftragsverarbeiter: Zustellung der Konto-E-Mails per SMTP (3.9)</td><td>E-Mail-Adresse, Inhalt der E-Mail</td></tr>
 <tr><td>RevenueCat, Inc. (USA)</td><td>Auftragsverarbeiter: Abo-Verwaltung</td><td>Benutzer-ID, Kauf- und Abodaten</td></tr>
-<tr><td>Anthropic Ireland, Limited (Irland) / Anthropic, PBC (USA), Claude API</td><td>Auftragsverarbeiter: KI-Antworten für Till (3.10) und Foto-Erkennung (3.12), jeweils nur nach deiner Einwilligung</td><td>Chat-Nachrichten, Titel/Plattform/Status der Truhenspiele, Profil-Plattformen und -Genres; für die Foto-KI ein verkleinertes Foto ohne EXIF-Daten und der darauf gelesene Text</td></tr>
+<tr><td>Anthropic Ireland, Limited (Irland) / Anthropic, PBC (USA), Claude API</td><td>Auftragsverarbeiter: KI-Prüfung der Suchvorschläge (3.3); KI-Antworten für Till (3.10) und Foto-Erkennung (3.12), jeweils nur nach deiner Einwilligung</td><td>Sucheingabe ohne deine Identität und Katalogvorschläge (3.3); Chat-Nachrichten, Titel/Plattform/Status der Truhenspiele, Profil-Plattformen und -Genres; für die Foto-KI ein verkleinertes Foto ohne EXIF-Daten und der darauf gelesene Text</td></tr>
 <tr><td>Apple (Apple Inc. / Apple Distribution International Ltd.)</td><td>App-Store-Zahlung nach Apples eigener Datenschutzrichtlinie</td><td>Kaufdaten</td></tr>
 <tr><td>Google (Google LLC / Google Ireland Ltd.)</td><td>ML-Kit-Messwerte (3.4); Google-Play-Zahlungen unter Android</td><td>Technische Messwerte; Kaufdaten unter Android</td></tr>
 <tr><td>Netlify, Inc. (USA)</td><td>Hosting der Website und der Web-App (3.8, 3.11)</td><td>IP-Adresse, Server-Logs</td></tr>
