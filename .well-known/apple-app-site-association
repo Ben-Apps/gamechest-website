@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["6TYT629KRD.com.creaiter.gamechest"],
+        "components": [
+          { "/": "/c/*", "comment": "Geteilte Truhe (Kurzlink) – öffnet die App, sonst diese Seite" }
+        ]
+      }
+    ]
+  }
+}

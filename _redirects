@@ -3,6 +3,8 @@
 # Messenger-Vorschauen die og-Tags der Truhen-Seite sehen. share.js liest den Key aus dem Pfad (oder aus ?k=).
 # Vorhandene Dateien (/c/share.js, /c/redirect.js, /c/index.html) werden nicht überschattet (Netlify-Shadowing).
 # 404.html → /c/redirect.js bleibt als Fallback für GitHub Pages. Spec: GrabGame/docs/specs/kurzlink_truhe.md
+# /.well-known/* (apple-app-site-association, assetlinks.json) wird bewusst NICHT umgeleitet: iOS und Android lesen die
+# Dateien direkt unter https://gamechest.games/.well-known/ und folgen keiner Weiterleitung.
 # /app/ braucht keinen SPA-Fallback: die Flutter-Web-App routet per Hash (/app/#/login).
 /app   /app/   301
 /de    /de/    301

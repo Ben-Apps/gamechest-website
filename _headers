@@ -35,3 +35,14 @@
 
 /og/*
   Cache-Control: public, max-age=86400
+
+# Universal Links (iOS) / App Links (Android) für gamechest.games/c/<key> – GrabGame/docs/specs/teilen_v3.md.
+# Die AASA-Datei hat keine Endung: ohne diesen Header käme sie als application/octet-stream, iOS verlangt JSON.
+# Keine Weiterleitung für /.well-known/* (siehe _redirects); kurze Cache-Zeit, Apple holt sie über sein CDN.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+
+/.well-known/assetlinks.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600

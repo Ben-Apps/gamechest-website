@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.creaiter.gamechest",
+      "sha256_cert_fingerprints": [
+        "4D:F8:2D:83:98:76:A7:86:35:EC:2F:34:70:DE:78:87:F5:0D:4C:BA:7D:1E:08:8A:85:1A:FF:E5:4E:BC:7A:71",
+        "42:51:89:40:D3:78:38:8C:83:E4:E6:5E:DF:BA:AC:6D:E1:97:72:E2:66:74:18:3D:E6:1A:A1:61:D5:3D:D4:74"
+      ]
+    }
+  }
+]
