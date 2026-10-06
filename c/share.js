@@ -5,6 +5,8 @@
  * Lädt Code + Snapshot über die Edge Function chest-share (action "resolve", kein Login) und baut daraus:
  * Kopf, Statistik (Status, Plattformen, Sterne), Status-Kacheln + Plattform-Chips + Suche + Sortierung,
  * Cover-Raster, Detail-Dialog je Spiel und die Weiche „In der App öffnen“ (Deep Link, sonst Store).
+ * Update 1.0.5 F3 (GrabGame/docs/specs/update_1.0.5.md): Empfehlungslinks /c/<key>?game=<Titel>&gid=<Katalog-ID>
+ * heben das gemeinte Spiel hervor (Suche wie die App, public/c/linked-game.js) und geben game + gid an den Deep Link weiter.
  * Nur textContent – kein innerHTML mit fremden Daten. Cover nur von images.igdb.com / *.steamstatic.com
  * (wie der Server erzwingt). Nichts wird gespeichert, keine Cookies, keine Analytics.
  */
@@ -16,7 +18,7 @@
   // Öffentlicher Publishable Key (steht ohnehin in jeder App).
   var SUPABASE_KEY = 'sb_publishable_t3CFnbENuZWLUDm-YqHXaA_7AJt0M8t';
   var KEY = /^(?:[2-9A-HJ-NP-Z]{6}|[2-9A-HJ-NP-Z]{8})$/; // neu 8, ältere Links 6
-  // Deep Link in die App (Handling baut die App: com.creaiter.gamechest://c/<KEY>[?game=<Titel>]).
+  // Deep Link in die App (Handling baut die App: com.creaiter.gamechest://c/<KEY>[?game=<Titel>][&gid=<Katalog-ID>]).
   var APP_SCHEME = 'com.creaiter.gamechest://c/';
   var FALLBACK_MS = 1500;
   var STATUS_LABEL = { want: 'Want to play', playing: 'Playing', completed: 'Completed', dropped: 'Dropped' };
@@ -24,6 +26,8 @@
   var GLYPH = { playing: '▶', completed: '✓', dropped: '✕', want: '' };
   var ORDER = { playing: 0, completed: 1, want: 2, dropped: 3 };
   var MAX_BARS = window.innerWidth < 720 ? 4 : 5; // Handy: kompakter (Rest → „Other“)
+  var GLOW_MS = 2500; // Lichtschein der verlinkten Karte, wie in der App
+  var Linked = window.GameChestLinkedGame || null; // /c/linked-game.js, vor diesem Skript geladen
 
   var root = document.querySelector('[data-chest-root]');
   if (!root) return;
@@ -47,6 +51,10 @@
   var ownerName = '';
   var games = [];
   var state = { status: 'all', platform: 'all', query: '', sort: 'status' };
+  // Empfehlung aus dem eigenen Link (?game=<Titel>&gid=<Katalog-ID>), gleiche Grenzen wie die App (ShelfCode).
+  var wantedTitle = Linked ? Linked.tidy(params.get('game') || '', 80) : '';
+  var wantedId = Linked ? Linked.tidyId(params.get('gid')) : null;
+  var linked = null; // das gefundene Spiel oder null
 
   function $(sel, scope) {
     return (scope || root).querySelector(sel);
@@ -126,9 +134,12 @@
     return PLAY_URL || APP_STORE_URL || '';
   }
 
-  function appLink(gameTitle) {
+  function appLink(gameTitle, gameId) {
     var link = APP_SCHEME + encodeURIComponent(key);
-    if (gameTitle) link += '?game=' + encodeURIComponent(gameTitle);
+    if (gameTitle) {
+      link += '?game=' + encodeURIComponent(gameTitle);
+      if (gameId) link += '&gid=' + encodeURIComponent(gameId);
+    }
     return link;
   }
 
@@ -151,7 +162,7 @@
    * iPhone ohne App-Store-URL (App noch im Review): kein Sprung ins Leere, sondern ein Hinweis.
    * Desktop: kein Schema-Versuch (dort gibt es die App nicht) → Hinweis + Store-Badges.
    */
-  function openApp(gameTitle, hintEl) {
+  function openApp(gameTitle, hintEl, gameId) {
     if (!isMobile) {
       if (hintEl && hintEl.closest('dialog')) {
         setHint(hintEl, 'GameChest is a phone app: open this link on your phone to add it.', PLAY_URL ? 'Get it on Google Play' : '', PLAY_URL);
@@ -192,7 +203,7 @@
         );
       }
     }, FALLBACK_MS);
-    location.href = appLink(gameTitle);
+    location.href = appLink(gameTitle, gameId);
   }
 
   // ---------------- Aufbau ----------------
@@ -210,6 +221,10 @@
         status: STATUS_LABEL[item.status] ? item.status : 'want',
         stars: typeof item.stars === 'number' && item.stars > 0 ? item.stars : 0,
         cover: safeCover(item.coverUrl),
+        // Katalog-ID (igdb:1113, steam:379720) für Empfehlungslinks und den Deep Link; der Server erlaubt ≤ 40 Zeichen.
+        catalogId: typeof item.catalogId === 'string' && item.catalogId.length <= 64 && /^[A-Za-z0-9:._-]+$/.test(item.catalogId)
+          ? item.catalogId
+          : null,
         search: '',
         el: null,
       });
@@ -413,6 +428,46 @@
 
     apply(true);
     show('ready');
+    markLinked();
+  }
+
+  // ---------------- Empfehlung (?game= / gid) ----------------
+
+  /*
+   * Sucht das verlinkte Spiel wie die App (ID, Titel, ohne Edition, eindeutiger Untertitel). Treffer: Goldrand +
+   * Lichtschein, Zeile „{Owner} recommends {Titel}.“ über dem Raster, Karte in die Mitte scrollen.
+   * Kein Treffer: nichts, die Seite bleibt wie ohne Parameter.
+   */
+  function markLinked() {
+    if (!Linked || (!wantedTitle && !wantedId) || !games.length) return;
+    linked = Linked.find(games, { title: wantedTitle, catalogId: wantedId });
+    if (!linked || !linked.el) return;
+    var card = linked.el;
+    card.setAttribute('data-linked', 'true');
+    var banner = $('[data-linked-banner]');
+    if (banner) {
+      field(banner, 'linked-line').textContent = (ownerName || 'Your friend') + ' recommends ' + linked.title + '.';
+      var add = $('[data-action="add-linked"]', banner);
+      if (add) add.href = isMobile ? appLink(linked.title, linked.catalogId) : storeUrl() || '/';
+      banner.hidden = false;
+    }
+    window.setTimeout(function () {
+      card.setAttribute('data-linked-glow', 'done');
+    }, GLOW_MS);
+    // Erst nach dem Layout scrollen. Passen Empfehlungszeile und Karte zusammen auf den Schirm, steht die Zeile
+    // oben (man sieht, warum die Karte leuchtet); sonst kommt die Karte in die Mitte (Spec: scrollIntoView center).
+    window.requestAnimationFrame(function () {
+      if (!card.scrollIntoView) return;
+      var smooth = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      var behavior = smooth ? 'smooth' : 'auto';
+      var top = banner ? banner.getBoundingClientRect().top : 0;
+      var bottom = card.getBoundingClientRect().bottom;
+      if (banner && bottom - top <= window.innerHeight - 32) {
+        window.scrollTo({ top: Math.max(0, window.scrollY + top - 16), behavior: behavior });
+      } else {
+        card.scrollIntoView({ block: 'center', behavior: behavior });
+      }
+    });
   }
 
   function compare(a, b) {
@@ -509,7 +564,7 @@
       img.src = bigCover(game.cover);
     }
     var add = dialog.querySelector('[data-action="add-game"]');
-    add.href = isMobile ? appLink(game.title) : storeUrl() || '/';
+    add.href = isMobile ? appLink(game.title, game.catalogId) : storeUrl() || '/';
     field(dialog, 'detail-hint').textContent = '';
     if (typeof dialog.showModal === 'function') {
       dialog.showModal();
@@ -583,7 +638,11 @@
     }
     if (action === 'add-game' && current) {
       event.preventDefault();
-      openApp(current.title, field(dialog, 'detail-hint'));
+      openApp(current.title, field(dialog, 'detail-hint'), current.catalogId);
+    }
+    if (action === 'add-linked' && linked) {
+      event.preventDefault();
+      openApp(linked.title, field(root, 'linked-hint'), linked.catalogId);
     }
     if (action === 'copy' && code) {
       var done = function (ok) {

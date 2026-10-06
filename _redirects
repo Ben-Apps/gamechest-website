@@ -9,3 +9,5 @@
 /app   /app/   301
 /de    /de/    301
 /c/*   /c/index.html   200
+# Abstimmung gamechest.games/v/<key> (Update 1.0.5 F2, GrabGame/docs/specs/update_1.0.5.md): gleiches Muster wie /c/.
+/v/*   /v/index.html   200

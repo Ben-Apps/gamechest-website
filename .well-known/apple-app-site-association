@@ -4,7 +4,8 @@
       {
         "appIDs": ["6TYT629KRD.com.creaiter.gamechest"],
         "components": [
-          { "/": "/c/*", "comment": "Geteilte Truhe (Kurzlink) – öffnet die App, sonst diese Seite" }
+          { "/": "/c/*", "comment": "Geteilte Truhe (Kurzlink) – öffnet die App, sonst diese Seite" },
+          { "/": "/v/*", "comment": "Abstimmung Which one tonight? (Update 1.0.5 F2) – öffnet die App, sonst diese Seite" }
         ]
       }
     ]
